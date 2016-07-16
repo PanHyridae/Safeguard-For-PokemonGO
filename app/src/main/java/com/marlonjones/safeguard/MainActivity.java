@@ -1,5 +1,6 @@
 package com.marlonjones.safeguard;
 
+import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Intent;
@@ -7,9 +8,12 @@ import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -21,8 +25,14 @@ import com.afollestad.materialdialogs.MaterialDialog;
 
 public class MainActivity extends AppCompatActivity {
     public static final int NOTIFICATION_ID = 1;
+    final private int REQUEST_PERMISSIONS = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //This is a permission check for the dialogs! Normally, you would not need this permission, but
+        //because it will show on top of Pokemon GO, it is needed.
+        int permissionCheck = ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.SYSTEM_ALERT_WINDOW);
+        //OnCreate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -65,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //This button tests the Dialog portion of the warnings
+        //This button tests the Dialog portion of the warnings!
         Button buttonTestDialog = (Button) findViewById(R.id.buttontest);
         buttonTestDialog.setOnClickListener(new View.OnClickListener() {
             @Override
