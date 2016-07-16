@@ -1,16 +1,22 @@
 <resources>
     <string name="app_name">Safeguard for Pokemon GO</string>
     <string name="launcher_app_name">Safeguard</string>
+
     <!--Menu Item Strings-->
     <string name="action_settings">About</string>
     <string name="action_donate">Donate</string>
-    <!--Dialogs-->
+
+    <!--Dialogs and Dialog Buttons-->
     <string name="error_dialog_title">Error!</string>
     <string name="error_dialog">Seems like you don\'t have Pokemon GO installed! </string>
-
+    <string name="welcome_trainer_title">Welcome, Trainer! You have Pokemon GO installed and
+    you\'re all good to "GO" and stay safe as well :D</string>
+    <string name="warning_title">Careful!</string>
+    <string name="warning">Be careful, Trainer! Remember to look up and stay aware of your surroundings!</string>
+    <string name="button_ok">OK</string>
     <string name="dialog_donate_title">Donate</string>
     <string name="dialog_donate">Wanna donate to help me create more apps like this?</string>
     <string name="pre_thanks">Thank you for any donation. I am a single developer with little income, so
     this can be used to help pay for my school and help create more cool apps :)</string>
-    <string name="post_thanks">Thanks alot! ^_^ ♥</string>
+    <string name="post_thanks">Thanks a lot! ^_^ ♥</string>
 </resources>
