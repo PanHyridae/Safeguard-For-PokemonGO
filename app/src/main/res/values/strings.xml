@@ -19,4 +19,28 @@
     <string name="pre_thanks">Thank you for any donation. I am a single developer with little income, so
     this can be used to help pay for my school and help create more cool apps :)</string>
     <string name="post_thanks">Thanks a lot! ^_^ ♥</string>
+    <string name="about_title">About</string>
+    <string name="about">Safeguard is an app made by Marlon Jones to keep players of Pokemon GO safer by giving constant
+    notifications and dialogs every 15 minutes to ensure the safety of players.</string>
+    <string name="dialog_test">This is a test of the dialog! You'll see this when you first boot up the game and if you have
+    Android 4.4 Kit-Kat, you'll see this every 15 minutes on screen</string>
+    <string name="notification_test_error">You don't have Android 5.0 or above! Because of this, the Heads-Up notifications will not work.
+    You will instead see dialogs.</string>
+
+    <!--Cards and other text-->
+    <string name="card_entry">Welcome to Safeguard! This very simple app's goal is to keep you safe by giving you notifications or dialogs
+    every 15 minutes while playing Pokemon GO to keep you safe and to remind you to stay aware of your surroundings. Even though
+    no single app or software can prevent all accidents while playing Pokemon GO or any other Augmented Reality app, the goal is
+    to at least help keep people safer while doing so. </string>
+    <string name="button_on">Turn services ON</string>
+    <string name="button_off">Turn services OFF</string>
+    <string name="test">Test Dialog</string>
+    <string name="test_2">Test Notification</string>
+    <string name="check">Check Installation</string>
+
+    <!--Notifications and SnackBars-->
+    <string name="notification_test">This is a test of the Heads-Up notification! You will see this every 15 minutes when playing Pokemon GO!</string>
+    <string name="bar_on">Service is on!</string>
+    <string name="bar_off">Service is off!</string>
+    <string name="bar_undo">UNDO</string>
 </resources>
