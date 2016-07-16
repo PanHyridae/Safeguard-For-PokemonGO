@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Safeguard Service is now on!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Intent mServiceIntent = new Intent(getApplicationContext(), alerterservice.class);
+                getApplicationContext().startService(mServiceIntent);
             }
         });
 
@@ -92,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
                                     builder.setContentTitle("Test Notification");
                                     builder.setContentText("This is a test of the Heads-Up notification! You will see this every 15 minutes when playing Pokemon GO!");
                                     builder.setPriority(Notification.PRIORITY_HIGH);
-                                    builder.setDefaults(Notification.DEFAULT_VIBRATE);
-                                    NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                    builder.setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 });
+                    NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                                     notificationManager.notify(NOTIFICATION_ID, builder.build());
                     //Below Lollipop
                 } else {
