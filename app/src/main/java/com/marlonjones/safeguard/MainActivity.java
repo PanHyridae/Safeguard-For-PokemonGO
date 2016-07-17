@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Safeguard Service is now on!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                Intent mServiceIntent = new Intent(getApplicationContext(), alerterservice.class);
-                getApplicationContext().startService(mServiceIntent);
+
             }
         });
 

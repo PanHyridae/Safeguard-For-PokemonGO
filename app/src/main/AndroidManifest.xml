@@ -18,8 +18,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service
-            android:name=".alerterservice"
-            android:exported="false"/>
     </application>
 </manifest>
