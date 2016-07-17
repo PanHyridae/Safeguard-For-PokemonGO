@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         //Android used Safeguard! It was Super Effective!
-        //This single button contains the things that makes Safeguard what it truly is.
-        //----------------------------------------------------------------------------
-        //THE FAB~! ^o^. This button has an onClick which will activate the Snackbar and the timer service.
+        //This FAB will switch between the normal Check Mark and X mark depending on
+        //if the Safeguard service is running or not. It also allows the service to be
+        //turned on or off, and shows the snackbar depending on if the service is on or not
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //These are the various buttons on the screen! ^_^
+        //These are the various buttons on the screen!
         //-------------------------------------------------------------
         //This first button checks and sees if Pokemon GO is installed.
         Button buttonCheck = (Button) findViewById(R.id.buttoncheck);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         });
         //This button does two things. If the user is running Android Lollipop,
         //Marshmallow, Nougat, or anything above that uses the Heads-Up Notifications,
-        //then they will see a notification. If not, they will see a dialog! :D
+        //then they will see a notification. If not, they will see a dialog!
         //-------------------------------------------------------------------------
         Button buttonTestNote = (Button) findViewById(R.id.buttontest2);
         buttonTestNote.setOnClickListener(new View.OnClickListener() {
