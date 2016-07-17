@@ -28,24 +28,24 @@ public class MainActivity extends AppCompatActivity {
     final private int REQUEST_PERMISSIONS = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //This is a permission check for the dialogs! Normally, you would not need this permission, but
-        //because it will show on top of Pokemon GO, it is needed.
-        int permissionCheck = ContextCompat.checkSelfPermission(MainActivity.this,
-                Manifest.permission.SYSTEM_ALERT_WINDOW);
+        //Insert permission check here pls. pls. PLS.
+
+
         //OnCreate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Floating Action Button
+        //Android used Safeguard! It was Super Effective!
+        //This single button contains the things that makes Safeguard what it truly is.
+        //----------------------------------------------------------------------------
+        //THE FAB~! ^o^. This button has an onClick which will activate the Snackbar and the timer service.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Safeguard Service is now on!", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
+                Snackbar.make(view, "Safeguard is now on!", Snackbar.LENGTH_LONG).show();
             }
         });
 
