@@ -102,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
                                     builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
                                     builder.setContentTitle("Test Notification");
                                     builder.setContentText("This is a test of the Heads-Up notification! You will see this every 15 minutes when playing Pokemon GO!");
-                                    builder.setPriority(Notification.PRIORITY_HIGH);
+                    builder.setStyle(new NotificationCompat.BigTextStyle().bigText("This is a test of the Heads-Up notification! You will see this every 15 minutes when playing Pokemon GO!"));
+                    builder.setPriority(Notification.PRIORITY_HIGH);
                     builder.setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 });
                     NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                                     notificationManager.notify(NOTIFICATION_ID, builder.build());
