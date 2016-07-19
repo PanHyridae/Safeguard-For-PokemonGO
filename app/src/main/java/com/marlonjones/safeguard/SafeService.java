@@ -44,8 +44,17 @@ public class SafeService extends Service {
         mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);
     }
 
-    class TimeDisplayTimerTask extends TimerTask {
+    public void startNotification() {
+    }
 
+    public void stopNotification() {
+    }
+
+    public boolean isNotificationStarted() {
+        return false;
+    }
+
+    class TimeDisplayTimerTask extends TimerTask {
         @Override
         public void run() {
             // run on another thread

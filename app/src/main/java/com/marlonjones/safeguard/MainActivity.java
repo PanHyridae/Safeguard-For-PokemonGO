@@ -26,16 +26,16 @@ import com.afollestad.materialdialogs.MaterialDialog;
 public class MainActivity extends AppCompatActivity {
     public static final int NOTIFICATION_ID = 1;
     final private int REQUEST_PERMISSIONS = 123;
+    private ServiceSingleton mSingleton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Insert permission check here pls. pls. PLS.
-
-
         //OnCreate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         /*Android used Safeguard! It was Super Effective!
         This FAB will switch between the normal Check Mark and X mark depending on
@@ -45,7 +45,14 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Safeguard is now on!", Snackbar.LENGTH_LONG).show();
+                if (mSingleton.isNotificationStarted()){
+                    mSingleton.startNotification();
+                    Snackbar.make(view, "Safeguard is now on!", Snackbar.LENGTH_LONG).show();
+                }
+                else {
+                    mSingleton.stopNotification();
+                    Snackbar.make(view, "Safeguard is now off!", Snackbar.LENGTH_LONG).show();
+                }
             }
         });
 
