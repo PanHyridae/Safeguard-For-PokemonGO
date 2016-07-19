@@ -9,3 +9,18 @@ safe and aware of their surroundings while playing Pokemon GO.
 //TODO: Finish Singleton Service and testing
 
 //Working: Tests. Not working: Background service (Currently WIP)
+
+````
+ <Safeguard - A Pokemon GO Safety app for Android>
+    Copyright (C) 2016  Marlon Jones MJonesDev
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+````
