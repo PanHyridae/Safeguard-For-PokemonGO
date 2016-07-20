@@ -26,7 +26,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 public class MainActivity extends AppCompatActivity {
     public static final int NOTIFICATION_ID = 1;
     final private int REQUEST_PERMISSIONS = 123;
-
+    private ServiceSingleton mSingleton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Insert permission check here pls. pls. PLS.
@@ -37,9 +37,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        /*Removed FAB OnClick and Singleton due to fatal errors*/
+        /*Android used Safeguard! It was Super Effective!
+        This FAB will switch between the normal Check Mark and X mark depending on
+        if the Safeguard service is running or not. It also allows the service to be
+        turned on or off, and shows the snackbar depending on if the service is on or not*/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-       /* fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mSingleton.isNotificationStarted()){
@@ -51,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     Snackbar.make(view, "Safeguard is now off!", Snackbar.LENGTH_LONG).show();
                 }
             }
-        });*/
-
+        });
 
         //These are the various buttons on the screen!
         //-------------------------------------------------------------

@@ -54,6 +54,10 @@ public class SafeService extends Service {
         return false;
     }
 
+    public interface LocalBinder {
+        SafeService getService();
+    }
+
     class TimeDisplayTimerTask extends TimerTask {
         @Override
         public void run() {
