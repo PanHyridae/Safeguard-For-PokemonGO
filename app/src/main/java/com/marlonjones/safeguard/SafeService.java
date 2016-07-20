@@ -45,9 +45,11 @@ public class SafeService extends Service {
     }
 
     public void startNotification() {
+        //start up notification timer 15 min
     }
 
     public void stopNotification() {
+        //cancel notification timer service
     }
 
     public boolean isNotificationStarted() {

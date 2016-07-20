@@ -55,11 +55,11 @@ public class ServiceSingleton {
                 }
             };
 
-            Intent intent = new Intent(this, SafeService.class);
+            Intent intent = new Intent(ServiceSingleton.this, SafeService.class);
             mBound = mContext.bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
 
             if (!mBound) {
-                Log.e(TAG, "Error cant bind to service !");
+                Log.e(TAG, "Error: can not bind to service!");
             }
         } else {
             if (mService != null) {
