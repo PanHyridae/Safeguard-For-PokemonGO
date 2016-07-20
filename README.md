@@ -1,4 +1,4 @@
-# Safeguard For Pokemon GO
+# Safeguard For Pokemon GO [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/MJonesDev/Safeguard-for-PokemonGO/blob/master/LICENSE.txt)
 ![Screenshots of MainActivity] (https://github.com/MJonesDev/Safeguard-For-PokemonGO/blob/master/AFFIX_20160720_125459.png)
 (NOTE: This is still in development)
 
