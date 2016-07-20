@@ -55,7 +55,7 @@ public class ServiceSingleton {
                 }
             };
 
-            Intent intent = new Intent(ServiceSingleton.this, SafeService.class);
+            Intent intent = new Intent(mContext, SafeService.class);
             mBound = mContext.bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
 
             if (!mBound) {
