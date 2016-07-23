@@ -8,9 +8,11 @@ safe and aware of their surroundings while playing Pokemon GO.
 
 //Current Dev Stage: Final Development
 
-//TODO: Finish Singleton Service and testing
+//TODO: Finish SafeService Rewrite and testing
 
 //Working: Tests. Not working: Background service (Currently WIP)
+
+//Release Goal: July 30, 2016
 
 ````
  <Safeguard - A Pokemon GO Safety app for Android>
