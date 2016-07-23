@@ -1,8 +1,11 @@
 package com.marlonjones.safeguard;
 
 import android.Manifest;
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
@@ -20,8 +23,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+
+import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
     public static final int NOTIFICATION_ID = 1;
@@ -42,16 +48,32 @@ public class MainActivity extends AppCompatActivity {
         if the Safeguard service is running or not. It also allows the service to be
         turned on or off, and shows the snackbar depending on if the service is on or not*/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mSingleton.isNotificationStarted()){
                     mSingleton.startNotification();
                     Snackbar.make(view, "Safeguard is now on!", Snackbar.LENGTH_LONG).show();
+                    /*The code below inside of this if statement is provided with help from
+                    /http://stackoverflow.com/questions/10221996/how-do-i-repeat-a-method-every-10-minutes-after-a-button-press-and-end-it-on-ano
+                    This is a Alarm Manager that will be created once the user presses the FAB, and will call the OnRecieve inside of the
+                    SafeService class.*/
+                    AlarmManager alarmManager=(AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+                    Intent intent = new Intent(getApplicationContext(), SafeService.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(),600000, pendingIntent);
                 }
                 else {
                     mSingleton.stopNotification();
                     Snackbar.make(view, "Safeguard is now off!", Snackbar.LENGTH_LONG).show();
+                    /*The code below this else statement is provided with help from the same source as the above code. This simply cancels
+                    * the if statement that is above.*/
+                    AlarmManager alarmManager=(AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+                    Intent intent = new Intent(getApplicationContext(), SafeService.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+                    alarmManager.cancel(pendingIntent);
+
                 }
             }
         });
