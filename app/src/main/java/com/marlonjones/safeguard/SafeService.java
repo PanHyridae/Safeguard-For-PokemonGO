@@ -15,8 +15,9 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/*This code was made with help from
-https://xjaphx.wordpress.com/2012/07/07/create-a-service-that-does-a-schedule-task/*/
+/*Some of this code was made with help from
+https://xjaphx.wordpress.com/2012/07/07/create-a-service-that-does-a-schedule-task/
+Specifically: OnCreate and TDTT. NOTE: THIS CODE MAY BE REMOVED DUE TO REDUNDANCY*/
 public class SafeService extends Service {
     private Handler mHandler = new Handler();
     private Timer mTimer = null;
@@ -33,14 +34,16 @@ public class SafeService extends Service {
 
     @Override
     public void onCreate() {
-       /* if (mTimer != null) {
+        // Cancels the timer if it already existed.
+        /*TODO- SEE IF THIS CODE IN ADDITION TO THE TIMERDISPLAYTASK CODE IS NEEDED. IF IT IS NOT NEEDED, DELETE BEFORE RELEASE OR SOON AFTER RELEASE*/
+        if (mTimer != null) {
             mTimer.cancel();
         } else {
             // recreate new
             mTimer = new Timer();
         }
         // schedule task
-        mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);*/
+        mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);
     }
 
     public void startNotification() {
@@ -59,7 +62,7 @@ public class SafeService extends Service {
         SafeService getService();
     }
 
-    /*class TimeDisplayTimerTask extends TimerTask {
+    class TimeDisplayTimerTask extends TimerTask {
         @Override
         public void run() {
             // run on another thread
@@ -77,7 +80,7 @@ public class SafeService extends Service {
                         builder.setContentText("Be careful, Trainer! Remember to look up and stay aware of your surroundings!!");
                         builder.setStyle(new NotificationCompat.BigTextStyle().bigText("Be careful, Trainer! Remember to look up and stay aware of your surroundings!!"));
                         builder.setPriority(Notification.PRIORITY_HIGH);
-                        builder.setVibrate(new long[] { 1000, 1000, 1000, 1000, 1000 });
+                        builder.setVibrate(new long[]{1000, 1000, 1000, 1000, 1000});
                         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                         notificationManager.notify(NOTIFICATION_ID, builder.build());
                         //Below Lollipop
@@ -90,6 +93,8 @@ public class SafeService extends Service {
                     }
 
                 }
-            });*/
+            });
 
-                }
+        }
+    }
+}
