@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -48,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
         if the Safeguard service is running or not. It also allows the service to be
         turned on or off, and shows the snackbar depending on if the service is on or not*/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
+        //reference drawable vectors
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mSingleton.isNotificationStarted()){
+                if  //replace mSingleton with Drawable If Visible References
+                     (mSingleton.isNotificationStarted()){
                     mSingleton.startNotification();
                     Snackbar.make(view, "Safeguard is now on!", Snackbar.LENGTH_LONG).show();
                     /*The code below inside of this if statement is provided with help from
