@@ -33,15 +33,14 @@ public class SafeService extends Service {
 
     @Override
     public void onCreate() {
-        // Cancels the timer if it already existed.
-        if (mTimer != null) {
+       /* if (mTimer != null) {
             mTimer.cancel();
         } else {
             // recreate new
             mTimer = new Timer();
         }
         // schedule task
-        mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);
+        mTimer.scheduleAtFixedRate(new TimeDisplayTimerTask(), 0, NOTIFY_INTERVAL);*/
     }
 
     public void startNotification() {
@@ -60,7 +59,7 @@ public class SafeService extends Service {
         SafeService getService();
     }
 
-    class TimeDisplayTimerTask extends TimerTask {
+    /*class TimeDisplayTimerTask extends TimerTask {
         @Override
         public void run() {
             // run on another thread
@@ -91,9 +90,6 @@ public class SafeService extends Service {
                     }
 
                 }
-            });
+            });*/
 
                 }
-
-            };
-        }
