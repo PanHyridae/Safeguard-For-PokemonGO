@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if  //replace mSingleton with Drawable If Visible References
+                if  //TODO - replace mSingleton with Drawable If Visible References
                      (mSingleton.isNotificationStarted()){
                     mSingleton.startNotification();
                     Snackbar.make(view, "Safeguard is now on!", Snackbar.LENGTH_LONG).show();
