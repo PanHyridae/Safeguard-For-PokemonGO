@@ -21,13 +21,15 @@ public class SafeService extends BroadcastReceiver{
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
+    //Start 10 - 15 minute service. call startNotification
     }
 
     public void startNotification() {
+        //make notification.
     }
 
     public void stopNotification() {
+        //make notification to end. call .cancel()
     }
 
     public boolean isNotificationStarted() {
