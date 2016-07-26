@@ -40,3 +40,8 @@ public class SafeService extends BroadcastReceiver {
 
     }
 }
+//TODO - FIX ERRORS
+/*List of Errors:
+* MainActivity.this / context - find fix
+* GetResources and getSystemServices cannot be resolved
+* */
