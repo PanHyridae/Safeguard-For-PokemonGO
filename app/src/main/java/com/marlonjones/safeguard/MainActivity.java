@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Drawable icon_on = getDrawable(R.drawable.ic_on_icon);
                 if  //TODO - replace mSingleton notificationstarted with Drawable If Visible References
                      (mSingleton.isNotificationStarted()){
                     mSingleton.startNotification();
