@@ -17,7 +17,8 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SafeService extends BroadcastReceiver{
+public class SafeService extends BroadcastReceiver
+{
 
     @Override
     public void onReceive(Context context, Intent intent) {
