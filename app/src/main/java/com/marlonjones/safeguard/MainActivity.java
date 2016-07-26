@@ -35,34 +35,29 @@ public class MainActivity extends AppCompatActivity {
     final private int REQUEST_PERMISSIONS = 123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Insert permission check here pls. pls. PLS.
-        //OnCreate
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
         /*Android used Safeguard! It was Super Effective!
         This FAB will switch between the normal Check Mark and X mark depending on
         if the Safeguard service is running or not. It also allows the service to be
         turned on or off, and shows the snackbar depending on if the service is on or not*/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //reference drawable vectors
         fab.setOnClickListener(new View.OnClickListener() {
-                                   @Override
-                                   public void onClick(View view) {
-                                           Snackbar.make(view, "Safeguard is now on!", Snackbar.LENGTH_LONG).show();
-                    /*The code below inside of this if statement is provided with help from
-                    /http://stackoverflow.com/questions/10221996/how-do-i-repeat-a-method-every-10-minutes-after-a-button-press-and-end-it-on-ano
-                    This is a Alarm Manager that will be created once the user presses the FAB, and will call the OnRecieve inside of the
-                    SafeService class.*/
-                                           AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-                                           Intent intent = new Intent(getApplicationContext(), SafeService.class);
-                                           PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
-                                           alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 600000, pendingIntent);
-                                       }
-                                   });
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Safeguard is now on!", Snackbar.LENGTH_LONG).show();
+                /*The code below inside of this if statement is provided with help from
+                /http://stackoverflow.com/questions/10221996/how-do-i-repeat-a-method-every-10-minutes-after-a-button-press-and-end-it-on-ano
+                 This is a Alarm Manager that will be created once the user presses the FAB, and will call the OnRecieve inside of the
+                 SafeService class.*/
+                AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+                Intent intent = new Intent(getApplicationContext(), SafeService.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 600000, pendingIntent);
+            }
+        });
 
         //These are the various buttons on the screen!
         //-------------------------------------------------------------
