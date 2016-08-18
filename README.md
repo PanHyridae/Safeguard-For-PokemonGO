@@ -5,15 +5,6 @@
 Safeguard is a Barebones Android app using a background service,
 which will give notifications and dialogs every 15 minutes to keep people
 safe and aware of their surroundings while playing Pokemon GO. 
-
-//Current Dev Stage: Final Development
-
-//TODO: Finish SafeService Rewrite and testing
-
-//Working: Tests. Not working: Background service (Currently WIP)
-
-//Release Goal: July 30, 2016
-
 ````
  <Safeguard - A Pokemon GO Safety app for Android>
     Copyright (C) 2016  Marlon Jones MJonesDev
