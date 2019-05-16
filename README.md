@@ -1,5 +1,4 @@
-# Safeguard For Pokemon GO [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://github.com/MJonesDev/Safeguard-for-PokemonGO/blob/master/LICENSE.txt)
-![Screenshots of MainActivity] (https://github.com/MJonesDev/Safeguard-For-PokemonGO/blob/master/AFFIX_20160720_125459.png)
+# Safeguard For Pokemon GO 
 
 Safeguard is a Barebones Android app using a background service,
 which will give notifications and dialogs every 15 minutes to keep people
@@ -8,6 +7,12 @@ This project is unfinished due to school, other projects, and because
 Niantic themselves have put in many warnings in Ingress and Pokemon GO, 
 making this app, in my opinion, almost useless. But the code is still here
 for people to use if they wish. 
+
+## Disclaimer
+Due to the app being incomplete and not updated for newer Android SDKs, I cannot guarantee that any of this code will 
+function as is. 
+
+## License - MIT
 ````
 MIT License
 
